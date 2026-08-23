@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "cvatca.eyecare",
+  "name": "Eye Care Breaks",
+  "version": "1.0.0",
+  "author": "cvatca",
+  "description": "EyeLeo-style eye strain break reminders: a short recurring micro-break plus a longer, optionally skippable break that dims every screen.",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Eye Care Breaks",
+    "description": "Shows whether break reminders are running; click to pause/resume",
+    "category": "Status",
+    "allowMultiple": false
+  }
+}
