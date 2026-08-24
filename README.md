@@ -19,6 +19,12 @@ The plugin also adds a bar widget with a status glyph (idle / running /
 break in progress) and a popup to pause/resume the cycle and view the
 current settings.
 
+## Screenshots
+
+| Bar widget | Small break | Big break |
+| --- | --- | --- |
+| ![Bar widget popup](eye_care_breaks.png) | ![Small break reminder](eye_care_breaks_2.png) | ![Big break overlay](eye_care_breaks_3.png) |
+
 ## Layout
 
 ```
@@ -43,6 +49,18 @@ cp cvatca.eyecare/*.qml cvatca.eyecare/manifest.json \
 ```
 
 Then reload the Omarchy shell (or restart the session) to pick up changes.
+
+## Uninstalling
+
+Remove the plugin's installed copy and its entry from `shell.json`:
+
+```bash
+rm -rf ~/.config/omarchy/plugins/cvatca.eyecare
+```
+
+Then remove the `cvatca.eyecare` entry from the `plugins` array (and, if
+present, from `bar.layout`) in `~/.config/omarchy/shell.json`, and reload
+the Omarchy shell (or restart the session).
 
 ## Configuration
 
