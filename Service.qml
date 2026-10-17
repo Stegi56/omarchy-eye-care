@@ -3,6 +3,7 @@ import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
 import qs.Commons
+import qs.Commons as Commons
 
 // Eye Care Breaks: EyeLeo-style break reminders.
 //
@@ -82,8 +83,8 @@ Item {
   // slice of the theme's accent hue keeps the break dark enough to rest the
   // eyes while still visibly carrying the active theme's color.
   function themedOverlayColor() {
-    var bg = Color.background
-    var ac = Color.accent
+    var bg = Commons.Color.background
+    var ac = Commons.Color.accent
     var mix = 0.16
     return Qt.rgba(
       bg.r * (1 - mix) + ac.r * mix,
@@ -263,8 +264,8 @@ Item {
         width: Math.min(280, parent.width - Style.space(40))
         height: Style.space(230)
         radius: Style.cornerRadius
-        color: Color.background
-        border.color: Color.accent
+        color: Commons.Color.background
+        border.color: Commons.Color.accent
         border.width: 1
         opacity: 0.97
 
@@ -281,7 +282,7 @@ Item {
           Text {
             width: parent.width
             text: root.currentSmallMessage
-            color: Color.foreground
+            color: Commons.Color.foreground
             font.family: Style.font.family
             font.pixelSize: Style.font.heading
             horizontalAlignment: Text.AlignHCenter
@@ -291,7 +292,7 @@ Item {
           Text {
             width: parent.width
             text: root.smallBreakRemaining + "s"
-            color: Color.muted
+            color: Commons.Color.muted
             font.family: Style.font.family
             font.pixelSize: Style.font.display
             horizontalAlignment: Text.AlignHCenter
@@ -357,7 +358,7 @@ Item {
         Text {
           anchors.horizontalCenter: parent.horizontalCenter
           text: root.bigMessage
-          color: Color.foreground
+          color: Commons.Color.foreground
           font.family: Style.font.family
           font.pixelSize: Style.font.displayLarge
           horizontalAlignment: Text.AlignHCenter
@@ -366,7 +367,7 @@ Item {
         Text {
           anchors.horizontalCenter: parent.horizontalCenter
           text: root.formatClock(root.bigBreakRemaining)
-          color: Color.accent
+          color: Commons.Color.accent
           font.family: Style.font.family
           font.pixelSize: Style.font.display
         }
@@ -375,7 +376,7 @@ Item {
           visible: root.bigBreakSkippable
           anchors.horizontalCenter: parent.horizontalCenter
           text: "Press Esc to skip"
-          color: Color.muted
+          color: Commons.Color.muted
           font.family: Style.font.family
           font.pixelSize: Style.font.body
 
